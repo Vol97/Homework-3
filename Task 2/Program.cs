@@ -9,7 +9,16 @@ namespace Task_2
             Console.Write("Enter number A: ");
             int a = Convert.ToInt32(Console.ReadLine());
 
-            for(int i = a; i <= 1000; i += a)
+            if (a == 0)
+            {
+                throw new DivideByZeroException();
+            }
+            else if (a < 0)
+            {
+                a *= -1;
+            }
+
+            for (int i = a; i <= 1000; i += a)
             {
                 Console.WriteLine(i);
             }

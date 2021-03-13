@@ -12,6 +12,33 @@ namespace Task_7
             int b = Convert.ToInt32(Console.ReadLine());
             int result = 1;
 
+            if (a == 0 && b == 0)
+            {
+                result = 0;
+            }
+            else if (a == 0 || b == 0)
+            {
+                if (a == 0)
+                {
+                    result = Math.Abs(b);
+                }
+                else
+                {
+                    result = Math.Abs(a);
+                }
+            }
+            else if (a < 0 || b < 0)
+            {
+                if (a < 0)
+                {
+                    a = Math.Abs(a);
+                }
+                if (b < 0)
+                {
+                    b = Math.Abs(b);
+                }
+            }
+
             while (a != 0 && b != 0)
             {
                 if (a > b)
