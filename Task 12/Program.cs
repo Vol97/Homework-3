@@ -10,7 +10,25 @@ namespace Task_12
             int a = Convert.ToInt32(Console.ReadLine());
             Console.Write("Enter number B: ");
             int b = Convert.ToInt32(Console.ReadLine());
-            bool? hasSameNumbers = null;
+            bool hasSameNumbers = false;
+
+            if(a == 0 && b == 0)
+            {
+                Console.WriteLine("ДА");
+                return;
+            }
+
+            if(a < 0 || b < 0)
+            {
+                if(a < 0)
+                {
+                    a = Math.Abs(a);
+                }
+                else
+                {
+                    b = Math.Abs(b);
+                }
+            }
 
             for (int i = a; i > 0; i /= 10)
             {

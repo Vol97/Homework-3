@@ -8,7 +8,13 @@ namespace Task_8
         {
             Console.Write("Enter a number: ");
             int a = Convert.ToInt32(Console.ReadLine());
-            int start = 1;
+
+            if (a < 0)
+            {
+                throw new ArgumentException("Not a positive number");
+            }
+
+            int start = 0;
             int end = a;
 
             while (true)
@@ -21,11 +27,17 @@ namespace Task_8
                 }
                 else if (Math.Pow(mid, 3) < a)
                 {
-                    start = mid;
+                    start = mid + 1;
                 }
                 else
                 {
                     Console.WriteLine(mid);
+                    break;
+                }
+
+                if (start == end)
+                {
+                    Console.WriteLine("oops");
                     break;
                 }
             }

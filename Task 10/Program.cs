@@ -11,7 +11,17 @@ namespace Task_10
             string mirrorNumberAsString = string.Empty;
             int mirrorNumber;
 
-            while(n % 10 != 0)
+            if (n < 0)
+            {
+                n = Math.Abs(n);
+            }
+            if (n == 0)
+            {
+                Console.WriteLine(0);
+                return;
+            }
+
+            while (n % 10 != 0)
             {
                 mirrorNumberAsString += n % 10;
                 n /= 10;
